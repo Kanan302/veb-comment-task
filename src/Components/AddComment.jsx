@@ -10,10 +10,7 @@ const AddComment = ({ buttonValue, addComments, replyingTo }) => {
     if (comment === "" || comment === " ") return;
 
     const newComment = {
-      id: Math.floor(Math.random() * 100) + 5,
       content: replyingToUser + comment.replace(replyingToUser, ""),
-      createdAt: new Date(),
-      score: 0,
       username: "juliusomo",
       currentUser: true,
       replies: [],

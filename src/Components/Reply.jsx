@@ -57,10 +57,8 @@ const Reply = ({
             setDeleteModalState={setDeleteModalState}
          
           />
-
           {commentContent()}
         </div>
-     
       </div>
 
       {replying && (

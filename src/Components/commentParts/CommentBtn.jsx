@@ -1,7 +1,7 @@
 import { FaReply } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
-
+//reply, delete buttonlari
 const CommentBtn = ({
   commentData,
   replying,
@@ -9,12 +9,14 @@ const CommentBtn = ({
   setDeleting,
   setDeleteModalState,
 }) => {
-  const showAddComment = () => {
+  
+  // reply comment
+  const replycomment = () => {
     setReplying(!replying);
   };
 
   // delete comment
-  const showDeleteModal = () => {
+  const deletecomment = () => {
     setDeleting(true);
     setDeleteModalState(true);
   };
@@ -25,7 +27,7 @@ const CommentBtn = ({
         className={`reply-btn ${
           !commentData.currentUser ? "" : "display--none"
         }`}
-        onClick={showAddComment}
+        onClick={replycomment}
       >
         <FaReply /> Reply
       </button>
@@ -33,11 +35,10 @@ const CommentBtn = ({
         className={`delete-btn ${
           commentData.currentUser ? "" : "display--none"
         }`}
-        onClick={showDeleteModal}
+        onClick={deletecomment}
       >
         <MdDelete /> Delete
       </button>
-    
     </div>
   );
 };
